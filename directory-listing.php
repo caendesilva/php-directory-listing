@@ -1,6 +1,6 @@
 <?php
 define('TIME_START', microtime(true));
-const VERSION = 'v1.0.0-rc';
+const VERSION = 'v1.0.0-rc.1';
 const RUNNING_IN_CONSOLE = PHP_SAPI === 'cli';
 ob_start();
 
@@ -10,6 +10,8 @@ if (RUNNING_IN_CONSOLE) {
 
 // Only the script directory
 $path = getcwd();
+
+$pathlabel = file_exists('dl-pathlabel') ? file_get_contents('dl-pathlabel') : $path ;
 
 // Full path (when running from server)
 //$path = trim(getcwd() . str_replace('/', DIRECTORY_SEPARATOR, $_SERVER['REQUEST_URI']), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
@@ -100,8 +102,8 @@ HTML;
 
 ?>
 <!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 3.2 Final//EN'>
-<html lang="en"><head><title>Index of <?php echo(htmlspecialchars($path))?></title></head><body>
-<h1>Index of <?php echo(htmlspecialchars($path))?></h1>
+<html lang="en"><head><title>Index of <?php echo(htmlspecialchars($pathlabel))?></title></head><body>
+<h1>Index of <?php echo(htmlspecialchars($pathlabel))?></h1>
 <table>
     <thead><tr><th valign="top"><img src="<?php echo $img['blank.gif'] ?>" alt="[ICO]"><th>Name</th><th>Last modified</th><th>Size</th><th>Description</th></tr><tr><th colspan="5"><hr></th></tr></thead>
     <tbody>
