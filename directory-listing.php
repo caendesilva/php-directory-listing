@@ -1,6 +1,6 @@
 <?php
 define('TIME_START', microtime(true));
-const VERSION = 'dev-master';
+const VERSION = 'v1.0.0-rc';
 const RUNNING_IN_CONSOLE = PHP_SAPI === 'cli';
 ob_start();
 
