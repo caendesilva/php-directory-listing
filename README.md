@@ -5,8 +5,13 @@ Works without dependencies, contained in a single file. Indented as a polyfill f
 
 ## Usage
 
+### Install
 ```bash
 wget https://raw.githubusercontent.com/caendesilva/php-directory-listing/master/directory-listing.php -O directory-listing.php
+```
+
+### Run
+```bash
 php directory-listing.php
 ```
 
