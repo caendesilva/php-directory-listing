@@ -108,4 +108,4 @@ HTML;
 <address><?php echo getAddress() ?></address>
 </body></html>
 <?php
-file_put_contents('index.html', ob_get_flush());
+file_put_contents('index.html', (PHP_SAPI === 'cli' ? ob_get_clean() : ob_get_flush()));
