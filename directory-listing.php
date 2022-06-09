@@ -5,7 +5,7 @@ const RUNNING_IN_CONSOLE = PHP_SAPI === 'cli';
 ob_start();
 
 if (RUNNING_IN_CONSOLE) {
-    file_put_contents('php://stdout', 'Generating directory listing...' . PHP_EOL);
+    file_put_contents('php://stdout', 'Generating directory listing... ');
 }
 
 // Only the script directory
