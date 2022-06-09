@@ -1,6 +1,6 @@
 <?php
 define('TIME_START', microtime(true));
-const VERSION = 'v1.0.0-rc.2';
+const VERSION = 'v1.0.0-rc.3';
 const RUNNING_IN_CONSOLE = PHP_SAPI === 'cli';
 ob_start();
 
@@ -11,7 +11,7 @@ if (RUNNING_IN_CONSOLE) {
 // Only the script directory
 $path = getcwd();
 
-$pathlabel = file_exists('dl-pathlabel') ? file_get_contents('dl-pathlabel') : $path ;
+$pathlabel = file_exists('.dl-pathlabel') ? file_get_contents('.dl-pathlabel') : $path ;
 
 // Full path (when running from server)
 //$path = trim(getcwd() . str_replace('/', DIRECTORY_SEPARATOR, $_SERVER['REQUEST_URI']), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
