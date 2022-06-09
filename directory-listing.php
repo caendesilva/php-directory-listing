@@ -1,5 +1,5 @@
 <?php
-$time_start = microtime(true);
+define('TIME_START', microtime(true));
 ob_start();
 
 const VERSION = 'dev-master';
@@ -38,8 +38,9 @@ function getAddress() {
     $php = PHP_VERSION;
     $date = date('Y-m-d H:i:s T');
     $time = date('c');
+    $processingTime = number_format((microtime(true) - TIME_START) * 1000, 2);
     return <<<HTML
-directory-listing.php/$version <small>($os) PHP/$php compiled at <time datetime="$time">$date</time></small>
+directory-listing.php/$version <small>($os) PHP/$php compiled at <time datetime="$time">$date</time> in {$processingTime}ms</small>
 HTML;
 }
 
