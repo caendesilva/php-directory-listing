@@ -4,6 +4,10 @@ const VERSION = 'dev-master';
 const RUNNING_IN_CONSOLE = PHP_SAPI === 'cli';
 ob_start();
 
+if (RUNNING_IN_CONSOLE) {
+    file_put_contents('php://stdout', 'Generating directory listing...' . PHP_EOL);
+}
+
 // Only the script directory
 $path = getcwd();
 
@@ -110,3 +114,7 @@ HTML;
 </body></html>
 <?php
 file_put_contents('index.html', (RUNNING_IN_CONSOLE ? ob_get_clean() : ob_get_flush()));
+
+if (RUNNING_IN_CONSOLE) {
+    file_put_contents('php://stdout', 'Done! Finished in ' . number_format((microtime(true) - TIME_START) * 1000, 2) .'ms.' . PHP_EOL);
+}
