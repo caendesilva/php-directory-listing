@@ -1,8 +1,9 @@
 <?php
 define('TIME_START', microtime(true));
+const VERSION = 'dev-master';
+const RUNNING_IN_CONSOLE = PHP_SAPI === 'cli';
 ob_start();
 
-const VERSION = 'dev-master';
 
 // Only the script directory
  $path = getcwd();
@@ -108,4 +109,4 @@ HTML;
 <address><?php echo getAddress() ?></address>
 </body></html>
 <?php
-file_put_contents('index.html', (PHP_SAPI === 'cli' ? ob_get_clean() : ob_get_flush()));
+file_put_contents('index.html', (RUNNING_IN_CONSOLE ? ob_get_clean() : ob_get_flush()));
