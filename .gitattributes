@@ -1,0 +1,4 @@
+/tests export-ignore
+/src export-ignore
+.gitignore export-ignore
+.gitattributes export-ignore
