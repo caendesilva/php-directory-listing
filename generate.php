@@ -49,7 +49,7 @@ function makeRow($file) {
     $row = <<<HTML
 <tr>
     <td valign="top"><img src="$icon" alt="$alt"></td>
-    <td>$filename</td>
+    <td><a href="$filename">$filename</a></td>
     <td>$time</td>
     <td>$size</td>
     <td>$description</td>
