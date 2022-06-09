@@ -24,6 +24,7 @@ function run() {
 
 function makeRow($file) {
     global $img;
+    $filename = basename($file);
     $ext = pathinfo($file, PATHINFO_EXTENSION);
     $size = filesize($file);
     $time = filemtime($file);
@@ -43,7 +44,7 @@ function makeRow($file) {
     $row = <<<HTML
 <tr>
     <td valign="top"><img src="$icon" alt="$alt"></td>
-    <td>$file</td>
+    <td>$filename</td>
     <td>$time</td>
     <td>$size</td>
     <td>$description</td>
