@@ -51,7 +51,7 @@ function run() {
 
 function makeRow($file) {
     global $img;
-    $filename = basename($file);
+    $filename = basename($file) . (is_dir($file) ? '/' : '');
     $ext = pathinfo($file, PATHINFO_EXTENSION);
     $size = is_dir($file) ? ' - ' : formatFileSize(filesize($file));
     $date = date('Y-m-d H:i', filemtime($file));
