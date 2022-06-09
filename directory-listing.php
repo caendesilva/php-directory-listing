@@ -57,7 +57,6 @@ function makeRow($file) {
     $date = date('Y-m-d H:i', filemtime($file));
     $time = date('c', filemtime($file));
 
-    $description = filetype($file);
     $icon = $img['unknown.gif'];
     $alt = '[   ]';
     if (is_dir($file)) {
@@ -87,7 +86,7 @@ function makeRow($file) {
     <td><a href="$filename">$filename</a></td>
     <td><time datetime="$time">$date</time></td>
     <td>$size</td>
-    <td>$description</td>
+    <td>&nbsp;</td>
 </tr>
 HTML;
     echo str_replace(PHP_EOL, '', $row);
