@@ -16,6 +16,18 @@ $img = [
     'movie.gif' => 'data:image/gif;base64,R0lGODlhFAAWAMQAAFRUVMTExK6urmZmZtbW1ubm5mZmZnt7e729vczMzN7e3lpaWu7u7oSEhLW1tXNzc4yMjP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUUABEALAAAAAAUABYAAAXQ4NGMx2Oe6DMoRXQQSTMsdL0MDxIMhMIcpYfDgdAFAkXTLEEoDJALYiDBpO6Gi0DziQAQmT0CbIDVFlQ0Xa/AKCgI6AViW5QnWIxIWzFAOABzTlBqeG4EfV1mQUIIYG8wBzNZdA4NiycDmQICgJQyNjYDm50FQCqbRDpFDnGBfQ4LAg5HVUeinK5IXo1ijwlkf2atWoVvcWaIdnh6bq+kyYRshs6BpoyOYgklAwDCSJcomUPdW0qgNQAAmQBMhglIRUfyRTpMPoYwVFT5+r0tIQA7',
 ];
 
+function formatFileSize($int) {
+    if ($int < 1024) {
+        return $int . ' B';
+    } elseif ($int < 1048576) {
+        return round($int / 1024, 2) . ' kB';
+    } elseif ($int < 1073741824) {
+        return round($int / 1048576, 2) . ' MB';
+    } else {
+        return round($int / 1073741824, 2) . ' GB';
+    }
+}
+
 function run() {
     global $path;
     foreach (glob($path . DIRECTORY_SEPARATOR .'*') as $file) {
@@ -27,7 +39,7 @@ function makeRow($file) {
     global $img;
     $filename = basename($file);
     $ext = pathinfo($file, PATHINFO_EXTENSION);
-    $size = filesize($file);
+    $size = formatFileSize(filesize($file));
     $time = filemtime($file);
     $description = filetype($file);
     $icon = $img['unknown.gif'];
