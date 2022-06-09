@@ -2,6 +2,8 @@
 $time_start = microtime(true);
 ob_start();
 
+const VERSION = 'dev-master';
+
 // Only the script directory
 // $path = getcwd();
 
@@ -26,6 +28,13 @@ function formatFileSize($int) {
     } else {
         return round($int / 1073741824, 2) . ' GB';
     }
+}
+
+function getAddress() {
+    $version = VERSION;
+    return <<<HTML
+directory-listing.php/$version
+HTML;
 }
 
 function run() {
@@ -88,7 +97,7 @@ HTML;
     <tbody><?php run() ?></tbody>
     <tfoot><tr><th colspan="5"><hr></th></tr></tfoot>
 </table>
-<address>php-directory-listing dev-master</address>
+<address><?php echo getAddress() ?></address>
 </body></html>
 <?php
 file_put_contents('index.html', ob_get_flush());
