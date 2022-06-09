@@ -32,8 +32,12 @@ function formatFileSize($int) {
 
 function getAddress() {
     $version = VERSION;
+    $os = PHP_OS;
+    $php = PHP_VERSION;
+    $date = date('Y-m-d H:i:s T');
+    $time = date('c');
     return <<<HTML
-directory-listing.php/$version
+directory-listing.php/$version ($os) PHP/$php compiled at <time datetime="$time">$date</time>
 HTML;
 }
 
