@@ -12,6 +12,8 @@ php directory-listing.php
 
 An index.html file will be created in the current directory. Warning: this will overwrite any existing index.html file.
 
+Tip: you may want to pin the download to a specific commit SHA instead of the latest master version.
+
 ## Attributions
 
 Highly inspired by the default Apache directory listings, but recreated from scratch as a PHP exercise.
