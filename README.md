@@ -3,6 +3,8 @@ Generate a directory listing HTML file for the current directory.
 
 Works without dependencies, contained in a single file. Indented as a polyfill for static sites.
 
+Live demo: https://caendesilva.github.io/hyde-monorepo/master/
+
 ## Usage
 
 ### Install
