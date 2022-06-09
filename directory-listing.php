@@ -82,32 +82,24 @@ function makeRow($file) {
     }
     $row = <<<HTML
 <tr>
-    <td valign="top"><img src="$icon" alt="$alt"></td>
-    <td><a href="$filename">$filename</a></td>
-    <td align="right"><time datetime="$time">$date</time></td>
-    <td align="right">$size</td>
-    <td>&nbsp;</td>
+<td valign="top"><img src="$icon" alt="$alt"></td>
+<td><a href="$filename">$filename</a></td>
+<td align="right"><time datetime="$time">$date</time></td>
+<td align="right">$size</td>
+<td>&nbsp;</td>
 </tr>
 HTML;
-    echo str_replace(PHP_EOL, '', $row);
+    echo '        '. str_replace(PHP_EOL, '', $row) . PHP_EOL;
 }
 ?>
 <!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 3.2 Final//EN'>
-<html lang="en"><head><title>Index of <?php echo(htmlspecialchars($path))?></title>
-</head><body>
+<html lang="en"><head><title>Index of <?php echo(htmlspecialchars($path))?></title></head><body>
 <h1>Index of <?php echo(htmlspecialchars($path))?></h1>
 <table>
-    <thead>
-        <tr>
-            <th valign="top"><img src="<?php echo $img['blank.gif'] ?>" alt="[ICO]">
-            <th>Name</th>
-            <th>Last modified</th>
-            <th>Size</th>
-            <th>Description</th>
-        </tr>
-        <tr><th colspan="5"><hr></th></tr>
-    </thead>
-    <tbody><?php run() ?></tbody>
+    <thead><tr><th valign="top"><img src="<?php echo $img['blank.gif'] ?>" alt="[ICO]"><th>Name</th><th>Last modified</th><th>Size</th><th>Description</th></tr><tr><th colspan="5"><hr></th></tr></thead>
+    <tbody>
+<?php run() ?>
+    </tbody>
     <tfoot><tr><th colspan="5"><hr></th></tr></tfoot>
 </table>
 <address><?php echo getAddress() ?></address>
