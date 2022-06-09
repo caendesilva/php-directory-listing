@@ -16,6 +16,7 @@ $img = [
     'folder.gif' => 'data:image/gif;base64,R0lGODlhFAAWAOYAAFw+H/HDlMOkhbaSbZh6W8LCwqKioubm5n9lS5mZmf/evf/Tpt+zhr29vbGLZL2betfX17e3t3JMJ6CAYO/Kpue6jfnWssWyoKV5TNesgZdrP7+UaWdEIv/Mmc6lfO/v797e3uG1iXxTKr+Zc4R6b6N2SszMzLKLZPXFla2DWo1xVf/Wre3Ak//bttW0lKurq//hw/jLn/3RpZRzUltDLMOZbrWPaal+UdG1mYRYLOXCnfXIm8mrjKuHY7SUc9uwheW4jK+Macaed6h8UWNCIf/ZtLyWcWtIJOy9jsSddqWEY3NSKf/jx5p7XLqPY5VvSMWljIBmTPHPrNa1nPLHnP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUUAFUALAAAAAAUABYAAAf/gFWCg4SFhoeIiB+Li4mDHwcgIBCUkgcHH4cHOEY2Dik3oUYmECCXjYI4PFJFRSsrCxUlPQ0FpKWXVQMUKzK+MTssNU9GAycpGEMXpiM6VCwsQCE/Hj48LgquVBsaJiAPUA8PAzblIwIuFq4yAT85ESYPTPMK9fbZvTtAHiIvBUYwAipo0aogrB0VMiQRYaDAAHstWryauCAGkgxCBkhI0MDGQImwFoisGICBhxFBNjZwEPHVrxgwUSTM2ENlClf5UKCAhgSJSZRKjnBMAQsYiwohpv3I4CGjkiYcOA6RESNABQZMPTQVUqxHExVEOJZ4FoJpkhFG0g4I8lQFAgANQDE4YTpibZAeeJVMIKAiCg0a/i5oyCFChITDRxIn5sABAA0S8ECYiPDCQILLmDMbeBE5kokCBRqIHk0atLcDgQAAOw==',
     'image2.gif' => 'data:image/gif;base64,R0lGODlhFAAWAOYAAAB0J6u+sr4mJoWFha2trQBrjlpaWubm5jOKUHt7eyaoUfpGRhSUvtbW1p+ypff391NTU1G53PcxMQecOWZmZsTExIygkuUxMTClzQZ8pACLL0ehZYOhrL5JQv9aWnJycrW1tW6LWxiYQu/v73+pt93d3Uqz1oyMjP///8zMzNYrKzKLbDGtWgBxlgCZM/pCQhSJsJK2wxqjSGZmZpmZmaWlpb29vf9mZiOSt/9RUZmZmQCCK1SvbO47OwB1nPY5Oc4pKeEuLjqwYT2lyAyBqIypswCZM/w6Ou0zMwB9KpCjlhagRCOXvgR4nimtUv9NTR+lTP5FRTaMU8lLRHCKWt4pKROMtVKrcD2nygiErf///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUUAFoALAAAAAAUABYAAAf/gCA2NiCFBIc1NDUgDQdaj482KCgPlZUjIw2KBCmOkCCWmJgHJSk0ijWdnw8jpCWvDSkVNDaoqloEIze7Hk8vP4MnFTY1NQQNjzUHvDlRPUiHJ6enNRWONSUeHlFHP0EqqMWJHzbXJTk5RxIXQALSh4bk5k8LSEhTISwKG0qFIATytGB70UNFBx5CFEBZIsJCoRoUygks8YMdFSEyJmjUgIAACYjWBB5oQEzfBBcodwDgwIRGxGutUoBQeNKFBgArsFg5YQCEIwKsSlS4smSCBg1JVpjAkSFBzxK4Ko0MIEKDyhURMBDx8QECAagEJj0Y6UAKThMYGDRp0fUrLrExVUEUGYKDSJMCBdpCrQH3QIoYTGBk8NGiAFuve6WWaFABRKITAxJI7upTC40Ri1MQIvB4QOQEXUPSgBz5g2kKqCkYWA2BQoMRWkpVmE172KDbFRo9CgQAOw==',
     'movie.gif' => 'data:image/gif;base64,R0lGODlhFAAWAMQAAFRUVMTExK6urmZmZtbW1ubm5mZmZnt7e729vczMzN7e3lpaWu7u7oSEhLW1tXNzc4yMjP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUUABEALAAAAAAUABYAAAXQ4NGMx2Oe6DMoRXQQSTMsdL0MDxIMhMIcpYfDgdAFAkXTLEEoDJALYiDBpO6Gi0DziQAQmT0CbIDVFlQ0Xa/AKCgI6AViW5QnWIxIWzFAOABzTlBqeG4EfV1mQUIIYG8wBzNZdA4NiycDmQICgJQyNjYDm50FQCqbRDpFDnGBfQ4LAg5HVUeinK5IXo1ijwlkf2atWoVvcWaIdnh6bq+kyYRshs6BpoyOYgklAwDCSJcomUPdW0qgNQAAmQBMhglIRUfyRTpMPoYwVFT5+r0tIQA7',
+    'text.gif' => 'data:image/gif;base64,R0lGODlhFAAWAMQAAFxcXNbW1q2trZmZmf///8TExO/v73Nzc+bm5rW1tXl5eaWlpb29vWZmZszMzPf3993d3YWFhWZmZoyMjP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUUABQALAAAAAAUABYAAAXFYMIwSSmcy7AkAUK9L0PMNPEYgSo4LizXMwMip1rwYAlgcDgoFI+UJGFArUIcAwdjsRAEXgIlQYitqgqu8NQ8GBYSp8GBkRbfho63YF5fs6sBb3wUanY3VwkHaIQzf2ZDDIoGjGI1Q4kFk2qOVZeSlJUzCA6YmkCOo6WglQ+je5mrfmYQBa+TCzYPN0IIvQiICw2wC7pCEAEBDsp5cAPCkwMGx3kkJSYpEQAO0BMREQoH4eIHDeUADRAvVwXs7e7tDhCTFCEAOw==',
 ];
 
 function formatFileSize($int) {
@@ -64,13 +65,20 @@ function makeRow($file) {
         $alt = '[DIR]';
     }
     if (is_file($file)) {
+        // if image
         if (in_array($ext, ['gif', 'jpg', 'jpeg', 'png', 'bmp'])) {
             $icon = $img['image2.gif'];
             $alt = '[IMG]';
         }
+        // if video
         if (in_array($ext, ['mp3', 'wav', 'ogg', 'flac', 'aac', 'wma', 'm4a', 'mp4', 'avi', 'mkv', 'wmv', 'mpg', 'mpeg', 'mov', 'flv', '3gp', 'm4v'])) {
             $icon = $img['movie.gif'];
             $alt = '[VID]';
+        }
+        // if text
+        if (in_array($ext, ['txt', 'md', 'markdown', 'php', 'html', 'css', 'js', 'json', 'xml', 'ini', 'sql', 'log', 'htaccess', 'htpasswd', 'htgroup', 'htdigest', 'sh', 'bat', 'cmd', 'c', 'cpp', 'h', 'hpp', 'java', 'py', 'pl', 'rb', 'sh', 'sql', 'yml', 'yaml', 'json', 'toml', 'xml', 'csv', 'tsv', 'xls', 'xlsx', 'doc', 'docx', 'ppt', 'pptx', 'pdf', 'epub', 'mobi'])) {
+            $icon = $img['text.gif'];
+            $alt = '[TXT]';
         }
     }
     $row = <<<HTML
