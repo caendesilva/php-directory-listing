@@ -37,7 +37,7 @@ function getAddress() {
     $date = date('Y-m-d H:i:s T');
     $time = date('c');
     return <<<HTML
-directory-listing.php/$version ($os) PHP/$php compiled at <time datetime="$time">$date</time>
+directory-listing.php/$version <small>($os) PHP/$php compiled at <time datetime="$time">$date</time></small>
 HTML;
 }
 
