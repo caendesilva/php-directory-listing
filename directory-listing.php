@@ -29,6 +29,10 @@ $img = [
 function run() {
     global $path;
     foreach (glob($path . DIRECTORY_SEPARATOR .'*') as $file) {
+		// ignore dotfiles
+		if (substr(basename($file), 0, 1) === '.') {
+			continue;
+		}
         makeRow($file);
     }
 }
