@@ -18,6 +18,7 @@ $img = [
     'movie.gif' => 'data:image/gif;base64,R0lGODlhFAAWAMQAAFRUVMTExK6urmZmZtbW1ubm5mZmZnt7e729vczMzN7e3lpaWu7u7oSEhLW1tXNzc4yMjP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUUABEALAAAAAAUABYAAAXQ4NGMx2Oe6DMoRXQQSTMsdL0MDxIMhMIcpYfDgdAFAkXTLEEoDJALYiDBpO6Gi0DziQAQmT0CbIDVFlQ0Xa/AKCgI6AViW5QnWIxIWzFAOABzTlBqeG4EfV1mQUIIYG8wBzNZdA4NiycDmQICgJQyNjYDm50FQCqbRDpFDnGBfQ4LAg5HVUeinK5IXo1ijwlkf2atWoVvcWaIdnh6bq+kyYRshs6BpoyOYgklAwDCSJcomUPdW0qgNQAAmQBMhglIRUfyRTpMPoYwVFT5+r0tIQA7',
     'text.gif' => 'data:image/gif;base64,R0lGODlhFAAWAMQAAFxcXNbW1q2trZmZmf///8TExO/v73Nzc+bm5rW1tXl5eaWlpb29vWZmZszMzPf3993d3YWFhWZmZoyMjP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUUABQALAAAAAAUABYAAAXFYMIwSSmcy7AkAUK9L0PMNPEYgSo4LizXMwMip1rwYAlgcDgoFI+UJGFArUIcAwdjsRAEXgIlQYitqgqu8NQ8GBYSp8GBkRbfho63YF5fs6sBb3wUanY3VwkHaIQzf2ZDDIoGjGI1Q4kFk2qOVZeSlJUzCA6YmkCOo6WglQ+je5mrfmYQBa+TCzYPN0IIvQiICw2wC7pCEAEBDsp5cAPCkwMGx3kkJSYpEQAO0BMREQoH4eIHDeUADRAvVwXs7e7tDhCTFCEAOw==',
     'tar.gif' => 'data:image/gif;base64,R0lGODlhFAAWAPQAADMzM9bW1rW1tZmZmf///2ZmZszMzObm5qWlpVlZWXl5eb29ve/v70tLS62trd3d3YyMjMTExPf393Nzcz8/P4WFhQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUUABYALAAAAAAUABYAAAXUoLCMomMiAyIEh+W6CyHPMhOkjtG+MS3rN5yO55MVVoOIcCf4DZ6DBtKwQFgDLocTKjVAn4ihlmAwzI6BiMA0mCxaYwRAEWMd0mqHGz5bNCYNAwcMd2kCexZjZAUHEwBmEjZUiIoDFAkVkDVpE2IyUQgMRXeHngR3RZulDIkyAgWwsAEzpJ2sY3cICQa7tJOmMhUFBAWataYBCQmBFA+RknqmAxUHCAUQg4VrxbeRaQ8B32V5A9wWguDjJSJW07us0xUK8xP19rEJjC7p4/3+OqwshAAAOw==',
+    'binary.gif' => 'data:image/gif;base64,R0lGODlhFAAWAPQAAExMTNbW1rW1tZmZmf///2ZmZszMzO/v76WlpXp6er29vebm5ltbW62trYWFhff398XFxd3d3XNzc1BQUIyMjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUUABUALAAAAAAUABYAAAXRoKCMYmMiAyIES+W6CiHP8hGkjdG+8ZEYhAIjsbjhdDzCAGAQJIKQG+S4E8gKhsEguBo0EeCAq3FtPhmGrFaLgLTI0INwUIQITAOJ4k2jHep2DXp8QUMEPm5FAXaDFWROUEsQD5QRZm6OSltYUDN1egeZkAwLnTUBTphkcgxbpoeooJl9tEWpoas/hU+el7hKTKMBvbezWFoPnJWMqmUIRBM6gAhYuJQMKwwTDmlpdwPVFXSW3iUiYAMOaKHpDu4S8PESQvQRLuQQ+fr7+hGhFSEAOw==',
 ];
 
 function formatFileSize($int) {
@@ -85,6 +86,11 @@ function makeRow($file) {
         if (in_array($ext, ['zip', 'rar', '7z', 'tar', 'gz', 'iso', 'jar'])) {
             $icon = $img['tar.gif'];
             $alt = '[ARC]';
+        }
+        // if binary/executable
+        if (in_array($ext, ['exe', 'dll', 'so', 'bin', 'sh', 'cgi', 'pl', 'py', 'php', 'asp', 'aspx', 'jsp', 'jar', 'bat', 'cmd', 'c', 'cpp', 'h', 'hpp', 'java', 'py', 'pl', 'rb', 'sh', 'sql', 'yml', 'yaml', 'json', 'toml', 'xml', 'csv', 'tsv', 'xls', 'xlsx', 'doc', 'docx', 'ppt', 'pptx', 'pdf', 'epub', 'mobi'])) {
+            $icon = $img['binary.gif'];
+            $alt = '[BIN]';
         }
     }
     $row = <<<HTML
