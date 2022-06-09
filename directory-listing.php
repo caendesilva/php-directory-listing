@@ -105,7 +105,7 @@ HTML;
 <table>
     <thead><tr><th valign="top"><img src="<?php echo $img['blank.gif'] ?>" alt="[ICO]"><th>Name</th><th>Last modified</th><th>Size</th><th>Description</th></tr><tr><th colspan="5"><hr></th></tr></thead>
     <tbody>
-<tr><td valign="top"><img src="<?php echo $img['back.gif'] ?>" alt="[PARENTDIR]"></td><td><a href="../">Parent Directory</a></td><td>&nbsp;</td><td align="right"> - </td><td>&nbsp;</td></tr>
+        <tr><td valign="top"><img src="<?php echo $img['back.gif'] ?>" alt="[PARENTDIR]"></td><td><a href="../">Parent Directory</a></td><td>&nbsp;</td><td align="right"> - </td><td>&nbsp;</td></tr>
 <?php run() ?>
     </tbody>
     <tfoot><tr><th colspan="5"><hr></th></tr></tfoot>
