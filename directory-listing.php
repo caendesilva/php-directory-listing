@@ -84,8 +84,8 @@ function makeRow($file) {
 <tr>
     <td valign="top"><img src="$icon" alt="$alt"></td>
     <td><a href="$filename">$filename</a></td>
-    <td><time datetime="$time">$date</time></td>
-    <td>$size</td>
+    <td align="right"><time datetime="$time">$date</time></td>
+    <td align="right">$size</td>
     <td>&nbsp;</td>
 </tr>
 HTML;
