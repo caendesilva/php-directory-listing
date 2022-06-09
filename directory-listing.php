@@ -53,7 +53,9 @@ function makeRow($file) {
     $filename = basename($file);
     $ext = pathinfo($file, PATHINFO_EXTENSION);
     $size = formatFileSize(filesize($file));
-    $time = filemtime($file);
+    $date = date('Y-m-d H:i', filemtime($file));
+    $time = date('c', filemtime($file));
+
     $description = filetype($file);
     $icon = $img['unknown.gif'];
     $alt = '[   ]';
@@ -75,7 +77,7 @@ function makeRow($file) {
 <tr>
     <td valign="top"><img src="$icon" alt="$alt"></td>
     <td><a href="$filename">$filename</a></td>
-    <td>$time</td>
+    <td><time datetime="$time">$date</time></td>
     <td>$size</td>
     <td>$description</td>
 </tr>
