@@ -4,9 +4,8 @@ const VERSION = 'dev-master';
 const RUNNING_IN_CONSOLE = PHP_SAPI === 'cli';
 ob_start();
 
-
 // Only the script directory
- $path = getcwd();
+$path = getcwd();
 
 // Full path (when running from server)
 //$path = trim(getcwd() . str_replace('/', DIRECTORY_SEPARATOR, $_SERVER['REQUEST_URI']), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
@@ -20,30 +19,6 @@ $img = [
     'text.gif' => 'data:image/gif;base64,R0lGODlhFAAWAMQAAFxcXNbW1q2trZmZmf///8TExO/v73Nzc+bm5rW1tXl5eaWlpb29vWZmZszMzPf3993d3YWFhWZmZoyMjP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUUABQALAAAAAAUABYAAAXFYMIwSSmcy7AkAUK9L0PMNPEYgSo4LizXMwMip1rwYAlgcDgoFI+UJGFArUIcAwdjsRAEXgIlQYitqgqu8NQ8GBYSp8GBkRbfho63YF5fs6sBb3wUanY3VwkHaIQzf2ZDDIoGjGI1Q4kFk2qOVZeSlJUzCA6YmkCOo6WglQ+je5mrfmYQBa+TCzYPN0IIvQiICw2wC7pCEAEBDsp5cAPCkwMGx3kkJSYpEQAO0BMREQoH4eIHDeUADRAvVwXs7e7tDhCTFCEAOw==',
     'back.gif' => 'data:image/gif;base64,R0lGODlhFAAWAPYAABkLC7y8vHFxccwAAJkAAEVBQfVBQWYAAKejo97e3pkzM4yMjDUfH9MzM6hzc2EoKGZmZkIDA7YAANbW1uVRUebm5tcbG5ZQULUfH+94eMzMzE9PT5mZmfYoKP9aWrW1tTswMDgWFndra40AALoPD+F3dykcHI59fe/v73g4ON8LC+kjI8hJSZWPj4IAACMPD/g4OGNBQeNKSug8PGBTU00kJPBtbcXFxaeMjK2trXwBAZlmZrNERK4AADMAAIN8fP9UVMEJCU47O14AAJ50dMcYGI1hYfIpKfIaGv5LS+AREU4/P/8zM1dXV3IAAPRMTOUwMLR0dFEBAYg2NnRTU/9mZnt7e/QkJKQAAP1CQjsrK/V1dVEsLFUxMYeHh6kFBWYzM7IqKsQQEIyGhmFNTVJMTCgPD8AAANsXF0I1NXxtbekLC/89PekODvE6OllQUK6KisMICNQMDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUUAHMALAAAAAAUABYAAAf/gHOCg4SFhoYcHDcVjCiHhhMFMWUtEwmMj4MoGlRhD0s5lo6Zmx9CKxhdlZeZc4xjKVckL6ujh4ycDUhfDAiWpAkaHBdHKgdlixWFlyi4H0YwShIhvgmanAuXljkOBtJSEIuCFTc7U1Y36dwlT2hnOmkfE67PFApNImpqURlV7RIutMgjB2cLEAM8WMg46MHDDDE9DoAIhYCIDX9Z2GjcCKXIFwIRwuXKmLGDSVQQsYxwQivAhBZgmJxUIadmD5UrAYgM9oOLhTUDJAjFOcSHCQEIXOLqGUcHgBdQn4KAkEhpM54AwC3wsjVpDqWsXE244cVMk68fXKYTZUusMEUaC+Jqw2ToKlu6hgIBADs=',
 ];
-
-function formatFileSize($int) {
-    if ($int < 1024) {
-        return $int . ' B';
-    } elseif ($int < 1048576) {
-        return round($int / 1024, 2) . ' kB';
-    } elseif ($int < 1073741824) {
-        return round($int / 1048576, 2) . ' MB';
-    } else {
-        return round($int / 1073741824, 2) . ' GB';
-    }
-}
-
-function getAddress() {
-    $version = VERSION;
-    $os = PHP_OS;
-    $php = PHP_VERSION;
-    $date = date('Y-m-d H:i:s T');
-    $time = date('c');
-    $processingTime = number_format((microtime(true) - TIME_START) * 1000, 2);
-    return <<<HTML
-directory-listing.php/$version <small>($os) PHP/$php compiled at <time datetime="$time">$date</time> in {$processingTime}ms</small>
-HTML;
-}
 
 function run() {
     global $path;
@@ -94,6 +69,31 @@ function makeRow($file) {
 HTML;
     echo '        '. str_replace(PHP_EOL, '', $row) . PHP_EOL;
 }
+
+function formatFileSize($int) {
+    if ($int < 1024) {
+        return $int . ' B';
+    } elseif ($int < 1048576) {
+        return round($int / 1024, 2) . ' kB';
+    } elseif ($int < 1073741824) {
+        return round($int / 1048576, 2) . ' MB';
+    } else {
+        return round($int / 1073741824, 2) . ' GB';
+    }
+}
+
+function getAddress() {
+    $version = VERSION;
+    $os = PHP_OS;
+    $php = PHP_VERSION;
+    $date = date('Y-m-d H:i:s T');
+    $time = date('c');
+    $processingTime = number_format((microtime(true) - TIME_START) * 1000, 2);
+    return <<<HTML
+directory-listing.php/$version <small>($os) PHP/$php compiled at <time datetime="$time">$date</time> in {$processingTime}ms</small>
+HTML;
+}
+
 ?>
 <!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 3.2 Final//EN'>
 <html lang="en"><head><title>Index of <?php echo(htmlspecialchars($path))?></title></head><body>
