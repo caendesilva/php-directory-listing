@@ -106,7 +106,7 @@ HTML;
 
 ?>
 <!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 3.2 Final//EN'>
-<html lang="en"><head><title>Index of <?php echo(htmlspecialchars($pathlabel))?></title></head><body>
+<html lang="en"><head><title>Index of <?php echo(htmlspecialchars($pathlabel))?></title><meta name="robots" content="noindex"></head><body>
 <h1>Index of <?php echo(htmlspecialchars($pathlabel))?></h1>
 <table>
     <thead><tr><th valign="top"><img src="<?php echo $img['blank.gif'] ?>" alt="[ICO]"><th>Name</th><th>Last modified</th><th>Size</th><th>Description</th></tr><tr><th colspan="5"><hr></th></tr></thead>
