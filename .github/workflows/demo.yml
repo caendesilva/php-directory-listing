@@ -32,5 +32,5 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add index.html src/index.html src/icons/index.html
-          git commit -m "Update directory listing https://github.com/caendesilva/php-directory-listing@${{ github.sha }}"
+          git commit -m "Update directory listing https://github.com/caendesilva/php-directory-listing/commits/${{ github.sha }}"
           git push
