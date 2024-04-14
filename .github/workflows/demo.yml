@@ -19,6 +19,9 @@ jobs:
       - name: Run Directory Listing Script
         run: php directory-listing.php
 
+      - name: Set path label # (Optional)
+        run: echo caendesilva/php-directory-listing@master > .dl-pathlabel
+
       - name: Commit Directory Listing
         run: |
           git config user.name github-actions
