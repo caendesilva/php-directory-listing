@@ -1,0 +1,20 @@
+# GitHub Actions demo to create a directory listing for the repository files to publish to GitHub Pages
+
+name: Demo Action
+
+on:
+  push:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Run Directory Listing Script
+    - run: php directory-listing.php
