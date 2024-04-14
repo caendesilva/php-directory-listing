@@ -16,6 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Set path label # (Optional)
+        run: echo caendesilva/php-directory-listing@master > .dl-pathlabel
+
       - name: Run Directory Listing Script
         run: php directory-listing.php
 
@@ -23,9 +26,6 @@ jobs:
         run: |
           cd src && php ../directory-listing.php
           cd icons && php ../../directory-listing.php
-
-      - name: Set path label # (Optional)
-        run: echo caendesilva/php-directory-listing@master > .dl-pathlabel
 
       - name: Commit Directory Listing
         run: |
