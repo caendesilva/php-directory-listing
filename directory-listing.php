@@ -1,6 +1,15 @@
 <?php
+/**
+ * Directory listing script
+ *
+ * @version v1.0.0-rc.5
+ * @author Caen De Silva <caen@desilva.se>
+ * @copyright 2022 Caen De Silva
+ * @license MIT License
+ * @link https://github.com/caendesilva/php-directory-listing
+ */
 define('TIME_START', microtime(true));
-const VERSION = 'v1.0.0-rc.4';
+const VERSION = 'v1.0.0-rc.5';
 const RUNNING_IN_CONSOLE = PHP_SAPI === 'cli';
 ob_start();
 
@@ -11,9 +20,10 @@ if (RUNNING_IN_CONSOLE) {
 // Only the script directory
 $path = getcwd();
 
+// Path label can be overridden by a file named .dl-pathlabel
 $pathlabel = file_exists('.dl-pathlabel') ? file_get_contents('.dl-pathlabel') : $path ;
 
-// Full path (when running from server)
+// Full path (Enable this when running from a live server)
 //$path = trim(getcwd() . str_replace('/', DIRECTORY_SEPARATOR, $_SERVER['REQUEST_URI']), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
 
 $img = [
@@ -29,10 +39,10 @@ $img = [
 function run() {
     global $path;
     foreach (glob($path . DIRECTORY_SEPARATOR .'*') as $file) {
-		// ignore dotfiles
-		if (substr(basename($file), 0, 1) === '.') {
-			continue;
-		}
+        // ignore dotfiles
+        if (substr(basename($file), 0, 1) === '.') {
+            continue;
+        }
         makeRow($file);
     }
 }
@@ -105,19 +115,19 @@ HTML;
 }
 
 ?>
-<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 3.2 Final//EN'>
-<html lang="en"><head><title>Index of <?php echo(htmlspecialchars($pathlabel))?></title><meta name="robots" content="noindex"></head><body>
-<h1>Index of <?php echo(htmlspecialchars($pathlabel))?></h1>
-<table>
-    <thead><tr><th valign="top"><img src="<?php echo $img['blank.gif'] ?>" alt="[ICO]"><th>Name</th><th>Last modified</th><th>Size</th><th>Description</th></tr><tr><th colspan="5"><hr></th></tr></thead>
-    <tbody>
+    <!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 3.2 Final//EN'>
+    <html lang="en"><head><title>Index of <?php echo(htmlspecialchars($pathlabel))?></title><meta name="robots" content="noindex"></head><body>
+    <h1>Index of <?php echo(htmlspecialchars($pathlabel))?></h1>
+    <table>
+        <thead><tr><th valign="top"><img src="<?php echo $img['blank.gif'] ?>" alt="[ICO]"><th>Name</th><th>Last modified</th><th>Size</th><th>Description</th></tr><tr><th colspan="5"><hr></th></tr></thead>
+        <tbody>
         <tr><td valign="top"><img src="<?php echo $img['back.gif'] ?>" alt="[PARENTDIR]"></td><td><a href="../">Parent Directory</a></td><td>&nbsp;</td><td align="right"> - </td><td>&nbsp;</td></tr>
-<?php run() ?>
-    </tbody>
-    <tfoot><tr><th colspan="5"><hr></th></tr></tfoot>
-</table>
-<address><?php echo getAddress() ?></address>
-</body></html>
+        <?php run() ?>
+        </tbody>
+        <tfoot><tr><th colspan="5"><hr></th></tr></tfoot>
+    </table>
+    <address><?php echo getAddress() ?></address>
+    </body></html>
 <?php
 file_put_contents('index.html', (RUNNING_IN_CONSOLE ? ob_get_clean() : ob_get_flush()));
 
