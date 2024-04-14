@@ -1,9 +1,10 @@
 # php-directory-listing
+
 Generate a directory listing HTML file for the current directory.
 
-Works without dependencies, contained in a single file. Indented as a polyfill for static sites, but works just fine as a live viewer.
+Works without dependencies, contained in a single file. Indented as a polyfill for static sites for example to be used in a GitHub Action, but it works just fine as a live viewer.
 
-Live demo: https://caendesilva.github.io/hyde-monorepo/master/
+Live demo: https://hydephp.github.io/develop/master/ (Generated for GitHub Pages in a GitHub Action)
 
 ## Usage
 
@@ -19,7 +20,7 @@ php directory-listing.php
 
 An index.html file will be created in the current directory. Warning: this will overwrite any existing index.html file.
 
-Tip: you may want to pin the download to a specific commit SHA instead of the latest master version.
+Tip: You may want to pin the download to a specific commit SHA instead of the latest master version.
 
 ### Dynamic live listing
 
