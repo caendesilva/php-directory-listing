@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   build:
@@ -27,10 +27,18 @@ jobs:
           cd src && php ../directory-listing.php
           cd icons && php ../../directory-listing.php
 
-      - name: Commit Directory Listing
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add index.html src/index.html src/icons/index.html
-          git commit -m "Update directory listing https://github.com/caendesilva/php-directory-listing/commits/${{ github.sha }}"
-          git push
+      - name: Package deployment artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
