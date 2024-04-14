@@ -19,6 +19,11 @@ jobs:
       - name: Run Directory Listing Script
         run: php directory-listing.php
 
+      - name: Recursive usage # (Optional)
+        run: |
+          cd src && php ../directory-listing.php
+          cd icons && php ../../directory-listing.php
+
       - name: Set path label # (Optional)
         run: echo caendesilva/php-directory-listing@master > .dl-pathlabel
 
@@ -26,6 +31,6 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add index.html
+          git add index.html src/index.html src/icons/index.html
           git commit -m "Update directory listing `${{ github.sha }}`"
           git push
